@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Lista albumów</h1>
+    <hr>
+<table border="0">
+
+
+    <ol>{% for album in object_list %}
+
+
+        <li>
+            {{ album.title}} | {{ album.artist_album }} | {{ album.year }} | {{ album.medium }} | {{ album.available }}
+        </li>
+    {% endfor %}
+    </ol>
+
+{% endblock %}

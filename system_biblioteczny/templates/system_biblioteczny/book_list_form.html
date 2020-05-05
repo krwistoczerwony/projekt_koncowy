@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Księgozbiór</h1>
+    <hr>
+            <br>
+        <a href="/">Księgozbiór</a>
+            <br>
+            <hr>
+    <ol>{% for book in object_list %}
+
+        <li>
+            {{ book.title}} ||| {{ book.author }} ||| {{ book.year }} ||| {{ book.category }} ||| {{ book.description }}  |||  {{ book.isbn }} ||| {{ book.available }}
+        </li>
+    {% endfor %}
+    </ol>
+
+{% endblock %}
+

@@ -15,7 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from system_biblioteczny.views import (
+    AuthorCreateView, BookCreateView, BookListView, BookDeleteView, BookUpdateView
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('album_create/', AlbumCreateView.as_view(), name='album_create'),
+    # path('artist_create/', ArtistCreateView.as_view(), name='artist_create'),
+    # path('movie_create/', MovieCreateView.as_view(), name='movie_create'),
+    # path('album_list/', AlbumListView.as_view(), name='album_list'),
+    # path('movie_list/', MovieListView.as_view(), name='movie_list'),
+    path('', BookListView.as_view(), name='book_list'),
+    path('author_create/', AuthorCreateView.as_view(), name='author_create'),
+    path('book_create/', BookCreateView.as_view(), name='book_create'),
+    path('book_update/', BookUpdateView.as_view(), name='book_update'),
+    path('book_delete/', BookDeleteView.as_view(), name='book_delete'),
 ]
